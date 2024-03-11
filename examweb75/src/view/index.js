@@ -16,6 +16,7 @@ const Web75 = () => {
 
   const get_all_movies = async () => {
     const url = 'https://examweb75-be.onrender.com/movie';
+    //const url = 'https://examweb75-be.onrender.com/movie';
     const response = await axios.get(url);
 
     if (response) {
@@ -29,13 +30,24 @@ const Web75 = () => {
 
   return (
     <>
-      <ComHeader />
-      <ComMovies
-        movies={movies}
-        movies_onChange={movies_onChange}
-        pages_onChange={pages_onChange}
-        page={page}
-      />
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            width: '900px',
+            //   display: 'flex',
+            //   flexDirection: 'column',
+            //   justifyContent: 'center',
+          }}
+        >
+          <ComHeader />
+          <ComMovies
+            movies={movies}
+            movies_onChange={movies_onChange}
+            pages_onChange={pages_onChange}
+            page={page}
+          />
+        </div>
+      </div>
     </>
   );
 };
